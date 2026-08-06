@@ -1,0 +1,17 @@
+[project]
+name = "glass-packaging-detection"
+version = "0.1.0"
+description = "A YOLO model tuend with a private dataset"
+readme = "README.md"
+authors = [
+    { name = "Bruce Kang", email = "brucekangcn@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "ipympl>=0.10.0",
+    "matplotlib>=3.11.1",
+    "pandas>=3.0.5",
+    "pyside6>=6.11.1",
+    "ultralytics>=8.4.115",
+]
