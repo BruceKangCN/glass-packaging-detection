@@ -1,5 +1,5 @@
 [project]
-name = "glass-packaging-detection"
+name = "glass-packing-detection"
 version = "0.1.0"
 description = "A YOLO model tuend with a private dataset"
 readme = "README.md"

@@ -31,7 +31,7 @@ model = YOLO(PROJECT_ROOT / "weights" / "best.pt")
 # 2. 进行推理
 #
 
-results = model.predict(PROJECT_ROOT / "data" / "images" / "val" / "IMG_20260805_153829.jpg")
+results = model.predict(PROJECT_ROOT / "data" / "images" / "test" / "1.jpg")
 
 # %%
 #

@@ -439,7 +439,7 @@ wheels = [
 ]
 
 [[package]]
-name = "glass-packaging-detection"
+name = "glass-packing-detection"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
