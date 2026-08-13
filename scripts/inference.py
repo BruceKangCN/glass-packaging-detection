@@ -3,6 +3,7 @@
 # 1. 导入所需的包并进行全局配置
 #
 
+import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -19,19 +20,26 @@ except NameError:
     mpl.use("QtAgg")
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
+if len(sys.argv) < 2:
+    sys.exit(1)
+
 # %%
 #
 # 1. 加载模型权重
 #
 
-model = YOLO(PROJECT_ROOT / "weights" / "best.pt")
+if len(sys.argv) >= 3:
+    model_path = sys.argv[2]
+else:
+    model_path = PROJECT_ROOT / "weights" / "best.pt"
+model = YOLO(model_path)
 
 # %%
 #
 # 2. 进行推理
 #
 
-results = model.predict(PROJECT_ROOT / "data" / "images" / "test" / "1.jpg")
+results = model.predict(sys.argv[1])
 
 # %%
 #
