@@ -39,7 +39,7 @@ model = YOLO(model_path)
 # 2. 进行推理
 #
 
-results = model.predict(sys.argv[1])
+results = model.predict(sys.argv[1], conf=0.6)
 result = results[0] # type: ignore
 boxes = result.boxes # type: ignore
 
