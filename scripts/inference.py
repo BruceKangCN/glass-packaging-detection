@@ -40,13 +40,23 @@ model = YOLO(model_path)
 #
 
 results = model.predict(sys.argv[1])
+result = results[0] # type: ignore
+boxes = result.boxes # type: ignore
+
+if boxes is None or len(boxes) == 0:
+    print("No object detected.")
+else:
+    print(f"Detections (xywh):")
+    print(boxes.xywh)
+    print(f"Detections (xywhn):")
+    print(boxes.xywhn)
 
 # %%
 #
 # 3. 可视化
 #
 
-annotated_img = results[0].plot()[:, :, ::-1] # type: ignore
+annotated_img = result.plot()[:, :, ::-1] # type: ignore
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
